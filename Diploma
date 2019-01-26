@@ -1,0 +1,30 @@
+package Classes;
+public class Diploma {
+	String a,b;
+	public Diploma(String a, String b){
+		this.a=a;
+		this.b=b;
+	}
+	public String toString() {
+		String s="This certifies that\n"+a+"\n"+"has completed a course in"+b;
+		return s;
+	}
+}
+class DiplomaWithHonors extends Diploma{
+	public DiplomaWithHonors(String a, String b) {
+		super(a,b);
+	}
+	public String toString() {
+		return(super.toString());
+	}
+}
+
+/*
+  This certifies that
+  Murray Smith
+  has completed a course in Gardening
+  This certifies that
+  Lisa Smith
+  has completed a course in Evolutionary Psychology
+  *** with honors ***
+*/
