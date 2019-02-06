@@ -1,0 +1,48 @@
+
+public abstract class Poem {
+	public abstract int numLines();
+	public abstract int getSyllables(int k);
+	public void printRhythm() {
+		int num, syl;
+		String s="";
+		Haiku a=new Haiku();
+		num=a.numLines();
+		syl=a.getSyllables(num);
+		for (int n=1;n<=num;n++) {
+			for (int k=1;k<=syl;k++) {
+				s+="ta-";
+			}
+			s+="\n";
+		}
+	}
+}
+
+class Haiku extends Poem{
+	public int numLines() {
+		return 3;
+	}
+	public int getSyllables(int k) {
+		if(k==1||k==3) 
+			return 5;
+		else
+			return 3;
+	}
+}
+
+class Limerick extends Poem{
+	public  int getSyllables(int k) {
+		if(k==1||k==2||k==5) return 6;
+		else return 9;
+	}
+	public int numLines() {
+		return 5;
+	}
+}
+
+
+class RunPoem{
+	public static void main(String[]args) {
+		Poem b=new Poem();
+		System.out.print(b.printRhythm());
+	}
+}
